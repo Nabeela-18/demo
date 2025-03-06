@@ -1,0 +1,21 @@
+def calculator(num1, num2, operator):
+    match operator:
+        case '+':
+            return num1 + num2
+        case '-':
+            return num1 - num2
+        case '*':
+            return num1 * num2
+        case '/':
+             if num2 != 0:
+                 return num1 / num2
+             else:
+                 return'Error: Division by zero'
+        
+        
+#user input
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operator = input("Enter operator (+, -, *, /): ")
+
+print("Result:", calculator(num1, num2, operator))
