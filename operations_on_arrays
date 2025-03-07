@@ -1,0 +1,27 @@
+import numpy as np
+
+# one-dimentional array
+array1 = np.array([9,4,5,6,7])
+array2 = np.array([5, 4, 3, 2, 1])
+
+print("one-dimentional array ")
+mul = array1 * array2
+print(array1)
+print(array2)
+print("Multiplication Result:", mul)
+
+sub = array1 - array2
+print("Subtraction Result:", sub)
+
+print()
+#two dimentional array
+array1 = np.array([[8,9,10],[7,6,5]])
+array2 = np.array([[1,2,3],[4,2,3]])
+print("two-dimentional array ")
+mul = array1 * array2
+print(array1)
+print(array2)
+print("Multiplication Result:\n", mul)
+
+sub = array1 - array2
+print("Subtraction Result:\n", sub)
