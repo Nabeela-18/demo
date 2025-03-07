@@ -1,0 +1,84 @@
+# 1. List (Dynamic Array)
+my_list = [1, 2, 3, 4, 5]
+my_list.append(6)
+my_list.remove(3)
+print("List:", my_list)
+
+# 2. Tuple (Immutable Sequence)
+my_tuple = (1, 2, 3, 4, 5)
+print("Tuple:", my_tuple)
+
+# 3. Set (Unordered Collection of Unique Elements)
+my_set = {1, 2, 3, 4, 5}
+my_set.add(6)
+my_set.discard(2)
+print("Set:", my_set)
+
+# 4. Dictionary (Key-Value Pair Mapping)
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+my_dict['d'] = 4
+del my_dict['b']
+print("Dictionary:", my_dict)
+
+# 5. Stack (LIFO) using list
+class Stack:
+    def __init__(self):
+        self.stack = []
+    
+    def push(self, item):
+        self.stack.append(item)
+    
+    def pop(self):
+        return self.stack.pop() if self.stack else None
+    
+    def peek(self):
+        return self.stack[-1] if self.stack else None
+    
+    def is_empty(self):
+        return len(self.stack) == 0
+    
+stack = Stack()
+stack.push(1)
+stack.push(2)
+print("Stack Pop:", stack.pop())
+
+# 6. Queue (FIFO) using collections.deque
+from collections import deque
+queue = deque()
+queue.append(1)
+queue.append(2)
+print("Queue Pop:", queue.popleft())
+
+# 7. Linked List Implementation
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+    
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+    
+    def print_list(self):
+        current = self.head
+        while current:
+            print(current.data, end=' -> ')
+            current = current.next
+        print("None")
+    
+ll = LinkedList()
+ll.append(1)
+ll.append(2)
+ll.append(3)
+print("Linked list items")
+ll.print_list()
